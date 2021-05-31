@@ -1,8 +1,6 @@
 import socket
 import pygame
 from zlib import decompress
-WIDTH = 1900
-HEIGHT = 1000
 def recvall(conn, length):
     buf = b''
     while len(buf) < length:
@@ -19,7 +17,7 @@ def main(host='192.168.1.2', port=50000):
     conn, addr = sock.accept()
     print("Accepted ....", addr)
     pygame.init()
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     clock = pygame.time.Clock()
     watching = True
     try:
