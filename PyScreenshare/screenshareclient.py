@@ -18,7 +18,7 @@ def capture_and_send(conn):
             conn.send(size_bytes)
             conn.sendall(pixels)
 
-def main(host='127.0.0.1', port=50000):
+def main(host='127.0.0.1', port=52000):
     sock = socket.socket()
     while True:
         try:
