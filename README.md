@@ -11,6 +11,9 @@ Windows:
 <pre> pip install -r requirements.txt </pre>
 Linux or Mac:
 <pre> pip3 install -r requirements.txt </pre>
+
+<pre> cd PyScreenshare </pre>
+
 3. Move the client.py file
 Move the client.py file to the computer you want to see the screen,
 
