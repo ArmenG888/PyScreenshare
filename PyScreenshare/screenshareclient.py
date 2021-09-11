@@ -5,6 +5,7 @@ from zlib import compress
 from mss import mss
 WIDTH = 1900
 HEIGHT = 1000
+ip_port = ("127.0.0.1", 52000)
 def capture_and_send(conn):
     with mss() as sct:
         rect = {'top': 0, 'left': 0, 'width': WIDTH, 'height': HEIGHT}
@@ -18,11 +19,11 @@ def capture_and_send(conn):
             conn.send(size_bytes)
             conn.sendall(pixels)
 
-def main(host='127.0.0.1', port=52000):
+def main(ip_port):
     sock = socket.socket()
     while True:
         try:
-            sock.connect((host, port))
+            sock.connect(ip_port)
             break
         except Exception:
             pass
@@ -35,4 +36,4 @@ def main(host='127.0.0.1', port=52000):
         print("ERR: ", e)
         sock.close()
 if __name__ == '__main__':
-    main()
+    main(ip_port)
