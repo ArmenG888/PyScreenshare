@@ -1,6 +1,7 @@
 import socket
 import pygame
 from zlib import decompress
+ip_port = ("127.0.0.1", 52000)
 def recvall(conn, length):
     buf = b''
     while len(buf) < length:
@@ -9,9 +10,9 @@ def recvall(conn, length):
             return data
         buf += data
     return buf
-def main(host='192.168.1.2', port=50000):
+def main(ip_port):
     sock = socket.socket()
-    sock.bind((host, port))
+    sock.bind(ip_port)
     print("Listening ....")
     sock.listen(5)
     conn, addr = sock.accept()
@@ -38,4 +39,4 @@ def main(host='192.168.1.2', port=50000):
         sock.close()
 
 if __name__ == "__main__":
-    main()
+    main(ip_port)
