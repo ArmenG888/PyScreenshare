@@ -14,6 +14,13 @@ Linux or Mac:
 
 <pre> cd PyScreenshare </pre>
 
+Windows:
+<pre> python server.py </pre>
+Linux or Mac:
+<pre> python3 server.py </pre>
+
+Then the same thing only with client.py
+
 3. Move the client.py file
 Move the client.py file to the computer you want to see the screen,
 
